@@ -10,58 +10,7 @@
 <meta name="viewport" content="width=device-width">
 <meta name="format-detection" content="telephone=no"><!--iphoneのあれ-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!--スクリプト-->
-	<script>
-		$(function() {
-			var nav = $('.nav');
-			var gotop = $('.nav span');
-			//navの位置    
-			var navTop = nav.offset().top;
-			$('.go-top').hide();
-			//スクロールするたびに実行
-			$(window).scroll(function () {
-				var winTop = $(this).scrollTop();
-				//スクロール位置がnavの位置より下だったらクラスfixedを追加
-				if (winTop >= navTop) {
-					nav.addClass('fixed')
-					$('.go-top').show();
-					
-				} else if (winTop <= navTop) {
-					nav.removeClass('fixed')
-					$('.go-top').hide();
-					
-				}
-				
-    		});
-			
-			/*$(".header-top-text").fadeIn(1500);//トップロゴ表示*/
-			$(".header-top-img").fadeIn(1500);//トップ画像表示
-			
-			/*トップへを押すとゆっくりスクロールでトップへ*/
-			var topgo = $('.footer-top-small a,.footer-top-big a,.go-top');
-			$(topgo).click(function(){
-				$('body,html').animate({scrollTop: 0}, 1000);
-				return false;
-			});
-			
-			$(window).on('load resize', function(){
-				var w = $(window).width();
-				var x = 959;
-				if (w < x) {
-					//画面サイズが959px未満のときの処理
-					$('.go-photo').attr('href','#go-photo');
-					$('.go-menu').attr('href','#go-menu');
-					$('.go-map').attr('href','#map');
-				} 
-				else {
-					//それ以外のときの処理
-					$('.go-photo').attr('href','#photo');
-					$('.go-menu').attr('href','#menu');
-					$('.go-map').attr('href','#empty');
-				}
-			  });
-			});
-	</script>
+
 </head>
 
 <body>	
@@ -245,7 +194,58 @@
 				<div class="footer-bottom-text"><p>&copy;Bar BABEL</p></div>
 
 <!--==========================================================-->
-
+<!--スクリプト-->
+	<script>
+		$(function() {
+			var nav = $('.nav');
+			var gotop = $('.nav span');
+			//navの位置    
+			var navTop = nav.offset().top;
+			$('.go-top').hide();
+			//スクロールするたびに実行
+			$(window).scroll(function () {
+				var winTop = $(this).scrollTop();
+				//スクロール位置がnavの位置より下だったらクラスfixedを追加
+				if (winTop >= navTop) {
+					nav.addClass('fixed')
+					$('.go-top').show();
+					
+				} else if (winTop <= navTop) {
+					nav.removeClass('fixed')
+					$('.go-top').hide();
+					
+				}
+				
+    		});
+			
+			/*$(".header-top-text").fadeIn(1500);//トップロゴ表示*/
+			$(".header-top-img").fadeIn(1500);//トップ画像表示
+			
+			/*トップへを押すとゆっくりスクロールでトップへ*/
+			var topgo = $('.footer-top-small a,.footer-top-big a,.go-top');
+			$(topgo).click(function(){
+				$('body,html').animate({scrollTop: 0}, 1000);
+				return false;
+			});
+			
+			$(window).on('load resize', function(){
+				var w = $(window).width();
+				var x = 959;
+				if (w < x) {
+					//画面サイズが959px未満のときの処理
+					$('.go-photo').attr('href','#go-photo');
+					$('.go-menu').attr('href','#go-menu');
+					$('.go-map').attr('href','#map');
+				} 
+				else {
+					//それ以外のときの処理
+					$('.go-photo').attr('href','#photo');
+					$('.go-menu').attr('href','#menu');
+					$('.go-map').attr('href','#empty');
+				}
+			  });
+			});
+	</script>
 
 </div><!--wrap-all-->
 </body>
