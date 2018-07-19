@@ -1,0 +1,762 @@
+@charset "UTF-8";
+/* CSS Document */
+/*=============================
+			全体・共通
+=============================*/
+@import url("HTML5 Reset Stylesheet.css");
+body {
+  background-color: #000;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: bottom;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+}
+
+h3 {
+  margin-bottom: 10px;
+  margin-left: -30px;
+  font-size: 1.2em;
+}
+
+/*==============================
+			ヘッダー
+==============================*/
+.header-wrap {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/top/top.jpg) no-repeat;
+  background-size: cover;
+  background-position: left;
+  position: relative;
+}
+
+/*四角とタイトル
+-----------------------------*/
+.header-top-img {
+  background: url(../img/top/top-title.png) no-repeat;
+  background-size: cover;
+  width: 150px;
+  height: 150px;
+  border: #fff solid 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -75px;
+  margin-top: -75px;
+  display: none;
+}
+@media screen and (min-width: 960px) {
+  .header-top-img {
+    width: 200px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -100px;
+  }
+}
+
+/*ナビ
+----------------------------*/
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.nav ul {
+  overflow: hidden;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.nav li {
+  list-style: none;
+  float: left;
+  width: 25%;
+  border-left: 2px #fff solid;
+  box-sizing: border-box;
+}
+.nav li:first-child {
+  border-left: 2px solid rgba(225, 225, 225, 0.8);
+}
+.nav li a {
+  text-decoration: none;
+  display: block;
+  height: calc(60px - 20px);
+  padding: 10px 0;
+  color: #fff;
+  font-size: 80%;
+  text-align: center;
+  line-height: 20px;
+}
+.nav li a:hover {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.nav li .here {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+
+/*ナビゲーション内のTwitterロゴ消去*/
+@media screen and (max-width: 959px) {
+  .nav a {
+    display: none;
+  }
+}
+/*---------ここまで--------------*/
+@media screen and (min-width: 960px) {
+  .header-wrap {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    position: relative;
+  }
+
+  .nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /*twitterロゴ*/
+  }
+  .nav ul {
+    width: 960px;
+    margin: 0 auto;
+  }
+  .nav a {
+    padding: 0;
+  }
+  .nav .fab {
+    font-size: 3em;
+    color: #55ACEE;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
+  .nav .fab:hover {
+    opacity: .7;
+  }
+
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    bottom: initial;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .go-top {
+    background: url(../img/top/top-title.png) no-repeat;
+    background-size: cover;
+    width: 41px;
+    height: 41px;
+    border: #fff solid 1px;
+    border-radius: 5px;
+    position: absolute;
+    top: 8px;
+    right: 65px;
+  }
+  .go-top:hover {
+    opacity: .7;
+  }
+}
+/*==============================
+			メイン
+==============================*/
+main {
+  width: 100%;
+  padding-top: 60px;
+}
+
+table {
+  width: 100%;
+}
+table th {
+  white-space: nowrap;
+  width: 100%;
+  padding-bottom: 10px;
+}
+table th:nth-child(2) {
+  text-align: right;
+}
+
+/*メニュー
+------------------------------*/
+.menu {
+  margin: 50px 0;
+}
+.menu .top-title {
+  color: #fff;
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 50px;
+}
+
+.menu-wrap {
+  color: #fff;
+  width: 350px;
+  margin: 0 auto;
+}
+.menu-wrap tr > th {
+  text-align: left;
+}
+.menu-wrap h2 {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 960px) {
+  .menu-wrap {
+    width: 960px;
+  }
+}
+
+/*アルコール
+---------------------------------------*/
+.sake {
+  width: 260px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 960px) {
+  .sake {
+    width: initial;
+    overflow: hidden;
+  }
+}
+
+.beer, .nihonsyu, .wine, .shoutyu, .whiskey, .highball, .sawar {
+  width: 260px;
+  margin: 0 auto 50px auto;
+}
+@media screen and (min-width: 960px) {
+  .beer, .nihonsyu, .wine, .shoutyu, .whiskey, .highball, .sawar {
+    width: 250px;
+    float: left;
+    height: 200px;
+    margin-left: 70px;
+  }
+}
+
+/*メニュー下囲み
+------------------------------------------*/
+.menu-bottom-wrap {
+  width: 260px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+@media screen and (min-width: 960px) {
+  .menu-bottom-wrap {
+    width: 100%;
+  }
+}
+
+/*ソフトドリンク
+------------------------------------------*/
+.softdrink-wrap {
+  margin-bottom: 50px;
+}
+@media screen and (min-width: 960px) {
+  .softdrink-wrap {
+    width: calc(40% - 70px);
+    height: 250px;
+    float: left;
+    margin-left: 70px;
+  }
+}
+
+.softdrink {
+  width: 100%;
+}
+
+/*サイドメニュー
+-------------------------------*/
+.sidemenu-wrap {
+  margin-bottom: 50px;
+}
+@media screen and (min-width: 960px) {
+  .sidemenu-wrap {
+    width: calc(40% - 50px);
+    height: 250px;
+    float: right;
+    margin-left: 50px;
+  }
+}
+.sidemenu-wrap .sidemenu {
+  width: 100%;
+}
+
+/*缶詰
+------------------------------------------*/
+.kandume-wrap {
+  width: 100%;
+}
+@media screen and (min-width: 960px) {
+  .kandume-wrap {
+    clear: both;
+    margin-bottom: 50px;
+  }
+}
+
+.kandume {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.kandume li {
+  list-style: none;
+}
+@media screen and (min-width: 960px) {
+  .kandume {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.5em;
+  }
+}
+.kandume .kandume1 {
+  position: relative;
+  float: left;
+  width: calc(30% - 20px);
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.kandume .kandume1::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2px;
+  left: -20px;
+  background: linear-gradient(to top left, #F7DE05, #ffffe0, #EDAC06, #ffffe0, #ECB802, #DAAF08, #B67B03);
+}
+@media screen and (min-width: 960px) {
+  .kandume .kandume1 {
+    position: relative;
+    float: left;
+    width: calc(14% - 25px);
+    white-space: nowrap;
+    margin-left: 25px;
+    margin-bottom: 10px;
+  }
+  .kandume .kandume1::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2px;
+    left: -20px;
+  }
+}
+.kandume .kandume2 {
+  position: relative;
+  float: left;
+  width: calc(30% - 20px);
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.kandume .kandume2::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2px;
+  left: -20px;
+  background-color: #FF0004;
+}
+@media screen and (min-width: 960px) {
+  .kandume .kandume2 {
+    position: relative;
+    float: left;
+    width: calc(14% - 25px);
+    white-space: nowrap;
+    margin-left: 25px;
+    margin-bottom: 10px;
+  }
+  .kandume .kandume2::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2px;
+    left: -20px;
+  }
+}
+.kandume .kandume3 {
+  position: relative;
+  float: left;
+  width: calc(30% - 20px);
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.kandume .kandume3::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2px;
+  left: -20px;
+  background-color: #438D50;
+}
+@media screen and (min-width: 960px) {
+  .kandume .kandume3 {
+    position: relative;
+    float: left;
+    width: calc(14% - 25px);
+    white-space: nowrap;
+    margin-left: 25px;
+    margin-bottom: 10px;
+  }
+  .kandume .kandume3::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2px;
+    left: -20px;
+  }
+}
+.kandume .kandume4 {
+  position: relative;
+  float: left;
+  width: calc(30% - 20px);
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.kandume .kandume4::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2px;
+  left: -20px;
+  background-color: #FBFF3C;
+}
+@media screen and (min-width: 960px) {
+  .kandume .kandume4 {
+    position: relative;
+    float: left;
+    width: calc(14% - 25px);
+    white-space: nowrap;
+    margin-left: 25px;
+    margin-bottom: 10px;
+  }
+  .kandume .kandume4::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2px;
+    left: -20px;
+  }
+}
+.kandume .kandume5 {
+  position: relative;
+  float: left;
+  width: calc(30% - 20px);
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.kandume .kandume5::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2px;
+  left: -20px;
+  background-color: #2D24FF;
+}
+@media screen and (min-width: 960px) {
+  .kandume .kandume5 {
+    position: relative;
+    float: left;
+    width: calc(14% - 25px);
+    white-space: nowrap;
+    margin-left: 25px;
+    margin-bottom: 10px;
+  }
+  .kandume .kandume5::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2px;
+    left: -20px;
+  }
+}
+.kandume .kandume6 {
+  position: relative;
+  float: left;
+  width: calc(30% - 20px);
+  margin-left: 20px;
+  margin-bottom: 10px;
+  width: 170px;
+}
+.kandume .kandume6::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2px;
+  left: -20px;
+  border: #fff dashed 1px;
+}
+@media screen and (min-width: 960px) {
+  .kandume .kandume6 {
+    position: relative;
+    float: left;
+    width: calc(14% - 25px);
+    white-space: nowrap;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    width: 250px;
+  }
+  .kandume .kandume6::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2px;
+    left: -20px;
+  }
+}
+
+/*地図
+------------------------------*/
+#map {
+  position: relative;
+}
+#map #empty {
+  position: absolute;
+  top: -60px;
+  left: 0;
+}
+
+iframe {
+  width: 100vw;
+  height: 400px;
+  vertical-align: bottom;
+}
+
+/*お問合せ
+------------------------------*/
+.info {
+  padding: 30px 0;
+  line-height: 2;
+}
+.info h2 {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+.info .info-Inquiry {
+  margin-bottom: 30px;
+}
+.info p {
+  color: #fff;
+  text-align: center;
+}
+
+.tel a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+@media screen and (min-width: 960px) {
+  .info {
+    padding: 65px 0;
+  }
+  .info p {
+    font-size: 1.5em;
+  }
+
+  .tel a {
+    font-size: 1.5em;
+  }
+}
+/*=============================
+			フッター
+=============================*/
+footer {
+  width: 100%;
+  background: url(../img/top/footer.png);
+  background-size: contain;
+  background-position: center;
+}
+
+.footer-wrap {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/*フッター左カラム*/
+.tw {
+  width: 260px;
+  height: 600px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+}
+
+/*フッター右カラム*/
+.footer-right-text {
+  width: 300px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0 0 5px 5px;
+  padding-bottom: 20px;
+}
+.footer-right-text .footer-top-small {
+  width: 100%;
+  padding: 10px 0;
+  text-align: right;
+  background-color: #4d4d4d;
+}
+.footer-right-text .footer-top-small a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 10px;
+}
+.footer-right-text .footer-top-small span {
+  color: #FF0004;
+}
+.footer-right-text .footer-text-first, .footer-right-text .footer-text-second, .footer-right-text .footer-text-last, .footer-right-text .footer-text-asagaya {
+  color: #000;
+  margin: 20px 20px 20px 30px;
+  position: relative;
+  line-height: 2;
+}
+.footer-right-text .footer-text-first p::before, .footer-right-text .footer-text-second p::before, .footer-right-text .footer-text-last p::before, .footer-right-text .footer-text-asagaya p::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: -23px;
+  background-image: url(../img/icon/beer.png);
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+/*著作マークの所*/
+.footer-bottom-text {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 100px;
+}
+
+@media screen and (min-width: 960px) {
+  .footer-mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  .footer-mask .footer-top-big {
+    width: 100%;
+    height: 30px;
+    background-color: #4d4d4d;
+    text-align: right;
+    line-height: 30px;
+  }
+  .footer-mask .footer-top-big a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+  }
+  .footer-mask .footer-top-big span {
+    color: #FF0004;
+  }
+
+  .footer-wrap {
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+    /*左カラム*/
+    /*右カラム*/
+  }
+  .footer-wrap .tw {
+    width: 30%;
+    height: 400px;
+    padding-bottom: 0;
+    float: left;
+  }
+}
+@media screen and (min-width: 960px) and (min-width: 960px) {
+  .footer-wrap .tw {
+    height: 600px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .footer-wrap #twitter-widget-0 {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .footer-wrap .footer-right-text {
+    float: left;
+    background-color: initial;
+    padding-bottom: initial;
+    width: calc(70% - 50px);
+    height: 400px;
+    margin-left: 50px;
+    position: relative;
+  }
+  .footer-wrap .footer-right-text .footer-top-small {
+    display: none;
+  }
+  .footer-wrap .footer-right-text .footer-text-first, .footer-wrap .footer-right-text .footer-text-second, .footer-wrap .footer-right-text .footer-text-last, .footer-wrap .footer-right-text .footer-text-asagaya {
+    font-size: 1.3em;
+  }
+  .footer-wrap .footer-right-text .footer-text-first p::before, .footer-wrap .footer-right-text .footer-text-second p::before, .footer-wrap .footer-right-text .footer-text-last p::before, .footer-wrap .footer-right-text .footer-text-asagaya p::before {
+    top: 0px;
+  }
+}
+@media screen and (min-width: 960px) and (min-width: 960px) {
+  .footer-wrap .footer-right-text .footer-text-first p::before, .footer-wrap .footer-right-text .footer-text-second p::before, .footer-wrap .footer-right-text .footer-text-last p::before, .footer-wrap .footer-right-text .footer-text-asagaya p::before {
+    top: 8px;
+  }
+}
+@media screen and (min-width: 960px) and (min-width: 960px) {
+  .footer-wrap .footer-right-text {
+    height: initial;
+    padding-top: 0px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .footer-bottom-text {
+    width: 100%;
+    background-color: #000;
+    margin-bottom: initial;
+  }
+}
+@media screen and (max-width: 959px) {
+  .footer-top-big {
+    display: none;
+  }
+}
